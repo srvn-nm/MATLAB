@@ -11,6 +11,8 @@ elseif and(g<70,g>=60)
   disp('Your grade is D. Work harder!')
 elseif g<40
   disp('Your grade is F. Sorry, you failed!')
+elseif and(g>100,g<0)
+  disp('Your exam is out of range!')
 else
   disp('You just passed the exam!')
 end

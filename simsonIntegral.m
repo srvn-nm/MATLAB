@@ -4,14 +4,18 @@ syms x
 a = input('Enter a here: ');
 b = input('Enter b here: ');
 n = input('Enter n here: ');
-
-F = @(x,e) (e*x+sin(x))
-
+f1 = log(x);
+f = inline("f1");
 h = (b - a)/n;
-
-x=linspace(a,b,n);
-
-I = 0;
-for i = 1:n-1
-    I = I + h/3*(F(x(i)) + 4*F((x(i)+x(i+1))/2) + F(x(i+1)));
+X = f(a)+f(b);
+Odd = 0;
+Even = 0;
+for i = 1:2:n-1
+  xi=a+(i*h);
+  Odd=Odd+f(xi);
 end
+for i = 2:2:n-2
+  xi=a+(i*h);
+  Even=Even+f(xi);
+end
+I = (h/3)*(X+4*Odd+2*Even)

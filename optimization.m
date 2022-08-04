@@ -11,3 +11,5 @@ while abs(df)<0.0001
 end
 xmin=x(end)
 fmin=xmin^2+5
+save sarvin xmin fmin
+save Sarvin.txt [xmin fmin] -ascii

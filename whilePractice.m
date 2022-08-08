@@ -1,7 +1,7 @@
 clear
 clc
-k=input('Enter k here: ')
-n=input('Enter n here: ')
+k=input('Enter k here: ');
+n=input('Enter n here: ');
 i=k;
 j=1;
 while and(i>=k,i<=n)
